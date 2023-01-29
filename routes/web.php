@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\IndexController;
+use App\Http\Controllers\VenueController;
+use App\Http\Controllers\WeatherController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [IndexController::class, 'viewIndex']);
+Route::get('/venues', [VenueController::class, 'getVenue']);
+Route::get('/weather', [WeatherController::class, 'getWeather']);
+Route::get('/error', function() {
+    abort(500);
 });

@@ -212,4 +212,6 @@ return [
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
 
+    'weather_api' => env('OPEN_WEATHER_APP_ID'),
+    'foursquare_key' => env('foursquare_api_key')
 ];
